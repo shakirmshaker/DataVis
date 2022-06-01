@@ -37,18 +37,11 @@ games_id_list = list(games_dict.values())
 
 
 # Set page config
-st.set_page_config(page_title='Football Game Stats', page_icon=':soccer:', initial_sidebar_state='expanded')
-st.set_option('wideMode' , True)
+st.set_page_config(page_title='Football Game Stats', page_icon=':soccer:', initial_sidebar_state='expanded', layout = 'wide')
 
-# Drop-down menu "Select Football Game"
-st.sidebar.markdown('## UEFA Euro 2020 knockout stage')
-
-st.sidebar.markdown(""" 
-                    * 8 games in the round of 16
-                    * 4 quarter-finals
-                    * 2 semi-finals
-                    * 1 final
-                    """)
+st.sidebar.title('Data Visualization 2022 | ITU')
+st.sidebar.markdown('Statistics plot will appear on the pitch')
+st.markdown('## UEFA Euro 2020 knockout stage')
 
 menu_game = st.sidebar.selectbox('Select Game', games_list, index=14)
 
@@ -75,34 +68,28 @@ mask_2 = df.loc[df['team_name'] == team_2]
 player_names_1 = mask_1['player_name'].dropna().unique()
 player_names_2 = mask_2['player_name'].dropna().unique()
 
-
 # List of activities for drop-down menus
 activities = ['Pass', 'Ball Receipt', 'Carry', 'Pressure', 'Shot']
 
 # Drop-down menus 'Select Team, Player and Activity'
-st.sidebar.markdown('## Select Player and Activity')
+#st.sidebar.markdown('## Select Player and Activity')
 menu_team = st.sidebar.selectbox('Select Team', (team_1, team_2))
 if menu_team == team_1:
     menu_player = st.sidebar.selectbox('Select Player', player_names_1)
 else:
     menu_player = st.sidebar.selectbox('Select Player', player_names_2)
 menu_activity = st.sidebar.selectbox('Select Activity', activities)
-st.sidebar.markdown('Select a player and activity. Statistics plot will appear on the pitch.')
 
 
 # Titles and text above the pitch
-st.title('Data Visualization 2022 | ITU')
 #st.markdown("""
 #The knockout phase of UEFA Euro 2020 took place between 26 June 2021 and 11 July 2021. It consisted of 
 #15 matches between 16 teams successfully qualified from the group stage. In the final game in London Italy 
 #won England on penalty kicks and took the trophy second time in their history.
 #""")
-st.write("""* Use dropdown-menus on the left side to select a game, team, player, and activity. 
-Statistics plot will appear on the pitch below.""")
-st.write('###', menu_activity, 'map')
-st.write('###### Game:', menu_game)
-st.write('###### Player:', menu_player, '(', menu_team, ')')
-
+#st.write("""* Use dropdown-menus on the left side to select a game, team, player, and activity. 
+#Statistics plot will appear on the pitch below.""")
+st.write('###', menu_activity, 'map for ', menu_player, 'from ', menu_team, 'in the game between ', team_1, ' - ', team_2)
 
 # Define five functions for five activities from drop-down menu
 # Pass plot function
@@ -227,9 +214,9 @@ st.pyplot(fig)
 
 
 # Text underneath the pitch
-st.write('##### Line-ups')
-st.write(team_1, ':')
-st.write(', '.join(str(e) for e in player_names_1))
-st.write(team_2, ':')
-st.write(', '.join(str(e) for e in player_names_2))
-st.subheader('Data Visualization 2022')
+#st.write('##### Line-ups')
+#st.write(team_1, ':')
+#st.write(', '.join(str(e) for e in player_names_1))
+#st.write(team_2, ':')
+#st.write(', '.join(str(e) for e in player_names_2))
+#st.subheader('Data Visualization 2022')
