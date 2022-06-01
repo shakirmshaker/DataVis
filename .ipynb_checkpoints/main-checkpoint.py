@@ -40,7 +40,8 @@ games_id_list = list(games_dict.values())
 st.set_page_config(page_title='Football Game Stats', page_icon=':soccer:', initial_sidebar_state='expanded', layout = 'wide')
 
 st.sidebar.title('Data Visualization 2022 | ITU')
-st.sidebar.markdown('Statistics plot will appear on the pitch')
+st.sidebar.header('Shakir Maytham Shaker')
+st.sidebar.subheader('Statistics plot will appear on the pitch')
 st.markdown('## UEFA Euro 2020 knockout stage')
 
 menu_game = st.sidebar.selectbox('Select Game', games_list, index=14)
