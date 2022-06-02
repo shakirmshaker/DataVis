@@ -42,7 +42,7 @@ st.set_page_config(page_title='Football Game Stats', page_icon=':soccer:', initi
 st.sidebar.title('Data Visualization 2022 | ITU')
 st.sidebar.write('*Shakir Maytham Shaker*')
 st.sidebar.write('Statistics plot will appear on the pitch')
-st.markdown('## UEFA Euro 2020 knockout stage')
+st.markdown('# UEFA Euro 2020 knockout stage')
 
 menu_game = st.sidebar.selectbox('Select Game', games_list, index=14)
 
@@ -79,9 +79,6 @@ else:
 menu_activity = st.sidebar.selectbox('Select Activity', activities)
 
 st.write(menu_activity, 'map for ', menu_player, 'from ', menu_team, 'in the game between ', team_1, ' - ', team_2)
-st.write('#', menu_activity, 'map for ', menu_player, 'from ', menu_team, 'in the game between ', team_1, ' - ', team_2)
-st.write('##', menu_activity, 'map for ', menu_player, 'from ', menu_team, 'in the game between ', team_1, ' - ', team_2)
-st.write('###', menu_activity, 'map for ', menu_player, 'from ', menu_team, 'in the game between ', team_1, ' - ', team_2)
 
 def pass_map():
     df_pass = df.loc[(df['player_name'] == menu_player) & (df['type_name'] == 'Pass')]
