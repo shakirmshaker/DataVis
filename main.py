@@ -70,7 +70,7 @@ player_names_1 = mask_1['player_name'].dropna().unique()
 player_names_2 = mask_2['player_name'].dropna().unique()
 
 # List of activities for drop-down menus
-activities = ['Pass', 'Ball Receipt', 'Carry', 'Pressure', 'Shot']
+activities = ['Pass', 'Ball Receipt', 'Shot'] #'Pressure', 'Carry']
 
 # Drop-down menus 'Select Team, Player and Activity'
 #st.sidebar.markdown('## Select Player and Activity')
