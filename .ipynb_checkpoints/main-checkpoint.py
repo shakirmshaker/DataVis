@@ -211,7 +211,7 @@ plt.text(100, 82.5, team_2, size=15, rotation=0, weight='bold',
          ha="center", va="center",
          bbox=dict(boxstyle="round",
                    ec=(0, 0, 0),
-                   fc=(1., 0.8, 0.8),
+                   fc=(0, 0, 0),
                    )
          )
 
