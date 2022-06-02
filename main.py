@@ -60,7 +60,6 @@ df['player_name'] = df['player_name'].apply\
     (lambda val: unicodedata.normalize('NFC', val).encode('ascii', 'ignore').decode('utf-8'))
 df['player_name'] = df['player_name'].replace('nan', np.nan)
 
-
 # Get teams and players names
 team_1 = df['team_name'].unique()[0]
 team_2 = df['team_name'].unique()[1]
@@ -72,8 +71,6 @@ player_names_2 = mask_2['player_name'].dropna().unique()
 # List of activities for drop-down menus
 activities = ['Pass', 'Ball Receipt', 'Shot'] #'Pressure', 'Carry']
 
-# Drop-down menus 'Select Team, Player and Activity'
-#st.sidebar.markdown('## Select Player and Activity')
 menu_team = st.sidebar.selectbox('Select Team', (team_1, team_2))
 if menu_team == team_1:
     menu_player = st.sidebar.selectbox('Select Player', player_names_1)
@@ -81,19 +78,8 @@ else:
     menu_player = st.sidebar.selectbox('Select Player', player_names_2)
 menu_activity = st.sidebar.selectbox('Select Activity', activities)
 
-
-# Titles and text above the pitch
-#st.markdown("""
-#The knockout phase of UEFA Euro 2020 took place between 26 June 2021 and 11 July 2021. It consisted of 
-#15 matches between 16 teams successfully qualified from the group stage. In the final game in London Italy 
-#won England on penalty kicks and took the trophy second time in their history.
-#""")
-#st.write("""* Use dropdown-menus on the left side to select a game, team, player, and activity. 
-#Statistics plot will appear on the pitch below.""")
 st.write('###', menu_activity, 'map for ', menu_player, 'from ', menu_team, 'in the game between ', team_1, ' - ', team_2)
 
-# Define five functions for five activities from drop-down menu
-# Pass plot function
 def pass_map():
     df_pass = df.loc[(df['player_name'] == menu_player) & (df['type_name'] == 'Pass')]
     location = df_pass['location'].tolist()
@@ -212,12 +198,3 @@ plt.text(5, -3, team_1, size=15)
 plt.text(100, -3, team_2, size=15)
 fig.set_size_inches(15, 10)
 st.pyplot(fig)
-
-
-# Text underneath the pitch
-#st.write('##### Line-ups')
-#st.write(team_1, ':')
-#st.write(', '.join(str(e) for e in player_names_1))
-#st.write(team_2, ':')
-#st.write(', '.join(str(e) for e in player_names_2))
-#st.subheader('Data Visualization 2022')
