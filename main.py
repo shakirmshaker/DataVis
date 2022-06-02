@@ -195,7 +195,16 @@ else:
 
 
 # Plot the figure
-plt.text(5, 81.7, team_1, size=15, weight='bold')
+#plt.text(5, 81.7, team_1, size=15, weight='bold')
+
+plt.text(5, 81.7, team_1, size=15, rotation=0,
+         ha="center", va="center",
+         bbox=dict(boxstyle="round",
+                   ec=(1., 0.5, 0.5),
+                   fc=(1., 0.8, 0.8),
+                   )
+         )
+
 plt.text(100, 81.7, team_2, size=15, weight='bold')
 fig.set_size_inches(15, 10)
 st.pyplot(fig)
