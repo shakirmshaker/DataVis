@@ -195,7 +195,7 @@ else:
 
 
 # Plot the figure
-plt.text(5, 81, team_1, size=15, weight='bold')
+plt.text(5, 81.5, team_1, size=15, weight='bold')
 plt.text(100, -3, team_2, size=15, weight='bold')
 fig.set_size_inches(15, 10)
 st.pyplot(fig)
