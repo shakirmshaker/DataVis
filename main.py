@@ -79,8 +79,9 @@ else:
 menu_activity = st.sidebar.selectbox('Select Activity', activities)
 
 st.write(menu_activity, 'map for ', menu_player, 'from ', menu_team, 'in the game between ', team_1, ' - ', team_2)
-st.header(menu_activity, 'map for ', menu_player, 'from ', menu_team, 'in the game between ', team_1, ' - ', team_2)
-st.subheader(menu_activity, 'map for ', menu_player, 'from ', menu_team, 'in the game between ', team_1, ' - ', team_2)
+st.write('#', menu_activity, 'map for ', menu_player, 'from ', menu_team, 'in the game between ', team_1, ' - ', team_2)
+st.write('##', menu_activity, 'map for ', menu_player, 'from ', menu_team, 'in the game between ', team_1, ' - ', team_2)
+st.write('###', menu_activity, 'map for ', menu_player, 'from ', menu_team, 'in the game between ', team_1, ' - ', team_2)
 
 def pass_map():
     df_pass = df.loc[(df['player_name'] == menu_player) & (df['type_name'] == 'Pass')]
